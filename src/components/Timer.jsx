@@ -1,7 +1,11 @@
-export default function Timer() {
+import { formatTime } from "../utils/functions.js";
+
+export default function Timer({ totalSeconds }) {
   return (
-    <div>
-      <h2>Timer </h2>
+    <div className="text-center">
+      <h2 className="text-4xl font-mono tracking-widest">
+        {formatTime(totalSeconds)}
+      </h2>
     </div>
   );
 }
