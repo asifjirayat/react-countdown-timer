@@ -8,11 +8,13 @@ import Timer from "./components/Timer.jsx";
 
 export default function App() {
   const [totalSeconds, setTotalSeconds] = useState(0);
+  const [inputValue, setInputValue] = useState("");
   const [isRunning, setisRunning] = useState(false);
   const intervalRef = useRef(null);
 
   //Function to handle event for input component
   function handleSetTime(value) {
+    setInputValue(value);
     const seconds = Math.max(0, Number(value));
     setTotalSeconds(seconds);
   }
@@ -26,6 +28,7 @@ export default function App() {
           if (prev <= 1) {
             clearInterval(intervalRef.current);
             setisRunning(false);
+            setInputValue("");
             return 0;
           }
           return prev - 1;
@@ -38,6 +41,8 @@ export default function App() {
   function handleStop() {
     clearInterval(intervalRef.current);
     setisRunning(false);
+    setTotalSeconds(0);
+    setInputValue("");
   }
 
   return (
@@ -46,11 +51,14 @@ export default function App() {
       <main className="flex flex-col gap-2 w-full h-4/6 mx-auto max-w-xs py-10">
         <Timer totalSeconds={totalSeconds} />
         <Input
+          value={inputValue}
           onChange={handleSetTime}
           label="Enter a value for the timer (seconds):"
           id="timer"
         />
-        <Button onClick={handleStart}>Start Timer</Button>
+        <Button onClick={handleStart} disabled={isRunning}>
+          {isRunning ? "Timer Running...." : "Start Timer"}
+        </Button>
         <Button onClick={handleStop} stop={true}>
           Stop Timer
         </Button>
