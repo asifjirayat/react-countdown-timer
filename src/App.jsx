@@ -48,16 +48,17 @@ export default function App() {
   return (
     <>
       <Header />
-      <main className="flex flex-col gap-2 w-full h-4/6 mx-auto max-w-xs py-10">
+      <main className="flex flex-col justify-center gap-2 w-full h-[60vh] mx-auto max-w-xs py-10">
         <Timer totalSeconds={totalSeconds} />
         <Input
           value={inputValue}
           onChange={handleSetTime}
+          disabled={isRunning}
           label="Enter a value for the timer (seconds):"
           id="timer"
         />
         <Button onClick={handleStart} disabled={isRunning}>
-          {isRunning ? "Timer Running...." : "Start Timer"}
+          {isRunning ? "Timer is Running..." : "Start Timer"}
         </Button>
         <Button onClick={handleStop} stop={true}>
           Stop Timer

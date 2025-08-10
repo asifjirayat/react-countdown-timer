@@ -5,8 +5,8 @@ export default function Header() {
         React Countdown Timer
       </h1>
       <p className="text-2xl text-stone-500 font-light text-center my-3">
-        This project uses React hooks: useState, useRef, forwardRef,
-        useImperativeHandle, and createPortal
+        This project uses React hooks: useState, useRef, and forwardRef.
+        TailwindCSS used for styling.
       </p>
     </header>
   );
