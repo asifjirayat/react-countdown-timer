@@ -1,12 +1,33 @@
-# React + Vite
+# Countdown Timer ⏳
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React countdown timer where the user can set a time in seconds, start the countdown, and stop it at any time. While the timer is running, the input and start button are disabled to prevent changes.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Set a countdown time in seconds.
+- Start and stop the countdown.
+- Input and start button are disabled during countdown.
+- Timer stops automatically when it reaches zero.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React (functional components, hooks)
+- Tailwind CSS for styling
+
+## How It Works
+
+1. Enter a time in seconds.
+2. Click Start Timer to begin.
+3. The timer will count down every second.
+4. Once started:
+   - The input field is disabled.
+   - The start button is disabled.
+5. Click Stop Timer at any time to reset to zero.
+
+## Installation & Running
+
+1. Clone this Repository: `git clone https://github.com/asifjirayat/react-countdown-timer`
+2. Navigate into the folder: `cd react-countdown-timer`
+3. Install dependencies: `npm install`
+4. Start the development server: `npm run dev`
+5. Open the app in your browser at: `http://localhost:5173`
